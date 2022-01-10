@@ -1,4 +1,4 @@
-from reocform.config import config, logging_config
+from recoform.config import config, logging_config
 import logging
 
 # Configure logger for use in package
