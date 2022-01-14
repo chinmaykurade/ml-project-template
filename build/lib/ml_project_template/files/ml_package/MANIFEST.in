@@ -2,10 +2,11 @@ include *.txt
 include *.md
 include *.cfg
 include *.pkl
-recursive-include ./ml_project_template/*
+recursive-include ./$package_name/*
 
-recursive-include ./ml_project_template/files *
-include ml_project_template/VERSION
+include $package_name/trained_models/*.pkl
+include $package_name/external_models/*
+include $package_name/VERSION
 
 include ./requirements.txt
 exclude *.log

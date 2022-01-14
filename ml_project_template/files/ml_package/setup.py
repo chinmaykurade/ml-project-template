@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 
 # Package meta-data.
-NAME = 'ml_project_template'
+NAME = '$package_name'
 DESCRIPTION = 'Description'
 URL = ''
 EMAIL = 'chinmay.v.kurade@gmail.com'
@@ -39,7 +39,7 @@ except FileNotFoundError:
 
 # Load the package's __version__.py module as a dictionary.
 ROOT_DIR = Path(__file__).resolve().parent
-PACKAGE_DIR = ROOT_DIR / 'ml_project_template'
+PACKAGE_DIR = ROOT_DIR / '$package_name'
 about = {}
 with open(PACKAGE_DIR / 'VERSION') as f:
     _version = f.read().strip()
@@ -58,14 +58,7 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(),
-    entry_points ={
-            'console_scripts': [
-                'mlproject = ml_project_template.create_lib:main'
-            ]
-        },
-    # package_data={
-    # 'ml_project_template': ['VERSION']
-    # },
+    package_data={'$package_name': ['VERSION']},
     install_requires=list_reqs(),
     extras_require={},
     include_package_data=True,
