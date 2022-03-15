@@ -3,13 +3,17 @@ from sklearn.model_selection import train_test_split
 
 from $package_name import pipeline
 from $package_name.processing.data_management import load_dataset, save_pipeline
-from $package_name.config import config
+from $package_name.config import config, logging_config
 from $package_name import __version__ as _version
 
 import logging
 
 
 _logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler(config.LOGS_DIR / f"{__name__}.txt")
+formatter = logging_config.FORMATTER
+file_handler.setFormatter(formatter)
+_logger.addHandler(file_handler)
 
 
 def run_training() -> None:

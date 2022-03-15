@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pandas as pd
-from $package_name.config import config
+from $package_name.config import config, logging_config
 from $package_name import __version__ as _version
 import pickle
 import joblib
@@ -9,7 +9,12 @@ from sklearn.pipeline import Pipeline
 import typing as t
 import logging
 
+
 _logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler(config.LOGS_DIR / f"{__name__}.txt")
+formatter = logging_config.FORMATTER
+file_handler.setFormatter(formatter)
+_logger.addHandler(file_handler)
 
 def load_image(*, file_name: str) -> np.array:
     _image = cv2.imread(f"{config.DATASET_DIR}/{file_name}")

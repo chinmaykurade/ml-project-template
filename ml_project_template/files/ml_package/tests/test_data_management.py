@@ -1,5 +1,5 @@
 import numpy as np
-from recoform.processing.data_management import load_image, load_model
+from $package_name.processing.data_management import load_image, load_model
 
 
 def test_load_image(file_name):

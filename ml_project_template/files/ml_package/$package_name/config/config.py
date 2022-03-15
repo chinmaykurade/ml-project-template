@@ -46,3 +46,5 @@ PIPELINE_SAVE_FILE = f"{PIPELINE_NAME}_output_v"
 
 # used for differential testing
 ACCEPTABLE_MODEL_DIFFERENCE = 0.05
+
+LOGS_DIR = PACKAGE_ROOT / "logs"

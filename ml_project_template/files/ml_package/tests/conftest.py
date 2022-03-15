@@ -1,5 +1,5 @@
 import pytest
-from recoform.config import config
+from $package_name.config import config
 
 @pytest.fixture
 def file_name():

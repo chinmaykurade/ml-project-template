@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 from $package_name.processing.data_management import load_pipeline
-from $package_name.config import config
+from $package_name.config import config, logging_config
 from $package_name.processing.validation import validate_inputs
 from $package_name import __version__ as _version
 
@@ -11,6 +11,10 @@ import typing as t
 
 
 _logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler(config.LOGS_DIR / f"{__name__}.txt")
+formatter = logging_config.FORMATTER
+file_handler.setFormatter(formatter)
+_logger.addHandler(file_handler)
 
 pipeline_file_name = f"{config.PIPELINE_SAVE_FILE}{_version}.pkl"
 _pipe = load_pipeline(file_name=pipeline_file_name)
